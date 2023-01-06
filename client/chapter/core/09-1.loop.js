@@ -67,8 +67,6 @@ while( i >= 0){
 // let copyArray = [...frontEndDev];
 
 
-
-
 // let copyArray = frontEndDev.slice();
 
 
