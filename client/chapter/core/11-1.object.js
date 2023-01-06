@@ -140,11 +140,6 @@ deleteProperty(authUser,'uid')
 
 
 
-
-
-
-
-
 // 단축 프로퍼티
 let name = '선범';
 let email = 'seonbeom2@euid.dev';
@@ -181,4 +176,73 @@ let salaries = {
   Pete: 430
 }
 
-Object.entries //이거를 이용해서.
+/* 배열 구조 분해 할당  destructuring assignments  */
+let total = 0;
+for(let [key, value] of Object.entries(salaries) ){
+
+  console.log(key);
+  // console.log(keyValue);
+  // let key = keyValue[0];
+  // let value = keyValue[1];
+
+  total += value;
+}
+
+// console.log( total );
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* 배열 구조 분해 할당  destructuring assignments                                     */
+/* -------------------------------------------------------------------------- */
+
+let color = ['#ff0000','#2b00ff','#00ff2f'];
+
+// const COLOR_RED = color[0]
+// const COLOR_BLUE = color[1]
+// const COLOR_GREEN = color[2]
+
+
+const [,,COLOR_GREEN]  = color
+
+console.log(COLOR_GREEN);
+
+// 발췌 
+
+// console.log(green);
+
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* 객체 구조 분해 할당  destructuring assignments                                     */
+/* -------------------------------------------------------------------------- */
+
+
+/* 
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 430 
+}
+*/
+
+const { John, Ann, Pete } = salaries;
+
+const element = {
+  width: 500,
+  height: 600
+}
+
+function getElementWidth(option,node){
+
+  const {width,height} = element;
+
+  width
+}
+
+ console.log(Ann);
+
