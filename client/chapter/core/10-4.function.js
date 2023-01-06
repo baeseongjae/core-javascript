@@ -156,9 +156,6 @@ const SocialPartiners = {
 };
 
 
-
-
-
 function sumSalaries(department) {
   if (Array.isArray(department)) { // 첫 번째 경우
     return department.reduce((prev, current) => prev + current.salary, 0); // 배열의 요소를 합함
