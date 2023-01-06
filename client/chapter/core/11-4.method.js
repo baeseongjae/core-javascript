@@ -2,6 +2,23 @@
 /* Object Methods and This                                                */
 /* ---------------------------------------------------------------------- */
 
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this
+  },
+  down() {
+    this.step--;
+    return this
+  },
+  showStep() { 
+    console.log( this.step );
+    return this
+  }
+};
+
+
 // 매장 주문의 결제 금액 총 합을 구하는 메서드를 구현해봅니다.
 const shopOrder = {
   date: '2022. 7. 6',
@@ -10,7 +27,17 @@ const shopOrder = {
     { name: '통 새우 돈까스', price: 13000, count: 2 },
     { name: '치즈 돈까스', price: 10000, count: 1 },
   ],
+  totalPrice() {
+    // let self = shopOrder;
+    // console.log(this.menu[0].price * this.menu[0].count);
+      // acc += 
+    return this.menu.reduce((acc,cur)=>acc + cur.price * cur.count,0)
+
+  }
 };
+
+console.log( shopOrder.totalPrice() );
+
 
 
 // 메서드와 this
@@ -36,7 +63,18 @@ const navigationMenu = {
   getItem(index) {
     return this.items[index];
   },
-  addItem: (newItem) => {
+  addItem (newItem) {
     this.items.push(newItem);
   },
 };
+
+
+
+console.log( navigationMenu.getItem(0) );
+
+
+navigationMenu.addItem({ 
+  id: 'link-y', 
+  text: 'Yahoo',
+  link: 'https://yahoo.co.kr' 
+})
