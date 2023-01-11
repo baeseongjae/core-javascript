@@ -20,6 +20,15 @@ console.log( first.style.fontSize );
 
 // - getComputedStyle(element, [pseudoElement]) `읽기 전용`
 
+
+
+
+// 자바스크립트에선 객체의 key, value 값을 변수로 받기 위해서는 . 사용 x 
+// [ ] 각괄호 표기법 
+
+// 대상에게 속성을 받아서 이 속성 값이 뭐야~?  라는걸 보여줘야함.
+
+
 function getCss(node,prop){
   if(typeof node === 'string')
     node = getNode(node);
@@ -46,3 +55,7 @@ function setCss(node,prop,value){
 
   node.style[prop] = value;
 }
+
+
+css('.first','font-size','100px'); // set
+css('.first','font-size'); // get
