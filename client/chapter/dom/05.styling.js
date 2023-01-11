@@ -29,32 +29,6 @@ console.log( first.style.fontSize );
 // 대상에게 속성을 받아서 이 속성 값이 뭐야~?  라는걸 보여줘야함.
 
 
-function getCss(node,prop){
-  if(typeof node === 'string')
-    node = getNode(node);
-  
-  if(!(prop in document.body.style)){
-    syntaxError('getCss 함수의 두번째 인자인 prop은 유효한 css 속성이 아닙니다.')
-  }
-
-  return getComputedStyle(node)[prop]
-}
-
-console.log(getCss('.first','font-size'));
-
-function setCss(node,prop,value){
-  if(typeof node === 'string')
-    node = getNode(node);
-  
-  if(!(prop in document.body.style)){
-    syntaxError('setCss 함수의 두번째 인자인 prop은 유효한 css 속성이 아닙니다.')
-  }
-  if(!value){
-    syntaxError('setCss 함수의 세번째 인자는 필수값 입니다.')
-  }
-
-  node.style[prop] = value;
-}
 
 
 css('.first','font-size','100px'); // set
