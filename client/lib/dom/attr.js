@@ -1,3 +1,7 @@
+
+// IIFE 패턴 
+
+
 //  유틸 함수 
 // get 함수 만들기 
 function getAttr(node,prop){

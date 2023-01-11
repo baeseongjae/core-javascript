@@ -84,3 +84,6 @@ console.assert( getAttr('.first','class') === 'first' );
   
 })(getNode)
  */
+
+
+let result = attr('.second','id');
