@@ -25,7 +25,6 @@ div{
   /* background-color: dodgerblue; */
 }
 
-
 span{
   display: inline-block;
   transition:all .5s;
@@ -34,4 +33,11 @@ span{
 span.is-active{
   transform: translateY(-300px);
 
+}
+
+.ground{
+  width: 600px;
+  height: 400px;
+  background-color: greenyellow;
+  border: 10px solid black;
 }

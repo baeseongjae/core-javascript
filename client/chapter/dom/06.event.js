@@ -13,6 +13,7 @@
 /* 이벤트 추가/제거 --------------------------------------------------------- */
 
 const first = getNode('.first');
+const second = getNode('.second');
 
 function handler(){
   console.log('hit !');
@@ -21,13 +22,12 @@ function handler(){
 
 }
 
-first.addEventListener('click',handler);
-
-
+// first.addEventListener('click',handler);
 
 const off = bindEvent('.first','click',handler);
+bindEvent('.second','click', off);
 
-bindEvent('.second','click', off)
+
 
 // - addEventListener
 // - removeEventListener

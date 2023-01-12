@@ -28,8 +28,13 @@ console.log( first.style.fontSize );
 
 // 대상에게 속성을 받아서 이 속성 값이 뭐야~?  라는걸 보여줘야함.
 
-
+ // if(!value) return getCss(node,prop)
+  // else setCss(node,prop,value)
 
 
 css('.first','font-size','100px'); // set
 css('.first','font-size'); // get
+
+setTimeout(() => {
+  console.log();
+}, 1000);
