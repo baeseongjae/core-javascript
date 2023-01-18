@@ -13,8 +13,10 @@
 
 function xhrData(method, url, body){
   const xhr = new XMLHttpRequest();
+
   // 비동기 통신 오픈
   xhr.open(method,url);
+
   xhr.addEventListener('readystatechange',()=>{
     const {status,readyState,response} = xhr; // 객체 구조 분해 할당 
 
@@ -32,11 +34,22 @@ function xhrData(method, url, body){
   xhr.send(JSON.stringify(body));
 }
 
+
+xhrData({
+  url:'https://jsonplaceholder.typicode.com/users',
+  method:'GET',
+  body:null,
+  headers:{
+    'Content-Type':'application/json'
+  }
+})
+
+
 /* GET
  xhrData('GET','https://jsonplaceholder.typicode.com/users'); */
 
 // POST
-xhrData('POST','https://jsonplaceholder.typicode.com/users',{
+/*xhrData('POST','https://jsonplaceholder.typicode.com/users',{
   "name": "kindtiger",
   "username": "seonbeom",
   "email": "tiger@euid.dev",
@@ -58,4 +71,4 @@ xhrData('POST','https://jsonplaceholder.typicode.com/users',{
     "bs": "harness real-time e-markets"
   }
 })
-
+*/
