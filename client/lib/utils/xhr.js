@@ -20,7 +20,10 @@
       'Access-Control-Allow-Origin': '*',
     },
   
-  }){
+  } = {}){
+
+    // const {url,method,body} = options;
+
     const xhr = new XMLHttpRequest();
     // console.log(xhr);
 
@@ -63,6 +66,9 @@ xhrData({
 })
 */
 
+
+// shorthand property
+
 xhrData.get = (url,onSuccess,onFail) =>{
   xhrData({
     url,
@@ -81,15 +87,36 @@ xhrData.post = (url,body,onSuccess,onFail) =>{
   })
 }
 
-xhrData.get(
-  'https://jsonplaceholder.typicode.com/users',
-  (result)=>{
-    console.log(result);
-  },
-  (err)=>{
-    console.log(err);
-  }
-)
+
+
+xhrData.put = (url,body,onSuccess,onFail) =>{
+  xhrData({
+    method:'PUT',
+    body,
+    url,
+    onSuccess,
+    onFail
+  })
+}
+
+xhrData.delete = (url,body,onSuccess,onFail) =>{
+  xhrData({
+    method:'DELETE',
+    url,
+    onSuccess,
+    onFail
+  })
+}
+
+// xhrData.delete(
+//   'https://jsonplaceholder.typicode.com/users',
+//   (result)=>{
+//     console.log(result);
+//   },
+//   (err)=>{
+//     console.log(err);
+//   }
+// )
 
 /* GET
  xhrData('GET','https://jsonplaceholder.typicode.com/users'); */
