@@ -14,6 +14,7 @@
     method = 'GET',
     body = null,
     onSuccess = null,
+    onFail = null,
     headers = {
       'Content-Type':'application/json',
       'Access-Control-Allow-Origin': '*',
@@ -21,7 +22,7 @@
   
   }){
     const xhr = new XMLHttpRequest();
-    console.log(xhr);
+    // console.log(xhr);
 
     // 비동기 통신 오픈
   xhr.open(method,url);
@@ -38,10 +39,10 @@
       if(readyState === 4){
         console.log('통신 성공');
         onSuccess(JSON.parse(response));
-        console.log();
       }
     }else{
-      console.error('통신실패');
+      // console.error('통신실패');
+      onFail('통신 실패')
     }
   })
 
@@ -49,13 +50,46 @@
   xhr.send(JSON.stringify(body));
 }
 
-
+/*
 xhrData({
   url:'https://jsonplaceholder.typicode.com/users/1',
+  method: 'POST',
   onSuccess: (result)=>{
     console.log(result);
+  },
+  onFail:(err)=>{
+    console.error(err);
   }
 })
+*/
+
+xhrData.get = (url,onSuccess,onFail) =>{
+  xhrData({
+    url,
+    onSuccess,
+    onFail
+  })
+}
+
+xhrData.post = (url,body,onSuccess,onFail) =>{
+  xhrData({
+    method:'POST',
+    body,
+    url,
+    onSuccess,
+    onFail
+  })
+}
+
+xhrData.get(
+  'https://jsonplaceholder.typicode.com/users',
+  (result)=>{
+    console.log(result);
+  },
+  (err)=>{
+    console.log(err);
+  }
+)
 
 /* GET
  xhrData('GET','https://jsonplaceholder.typicode.com/users'); */
