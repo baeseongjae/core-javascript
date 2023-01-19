@@ -9,7 +9,7 @@
  */
 
   // xhrData함수만들기   method, url
-  function xhrData({
+  export function xhrData({
     url = '',
     method = 'GET',
     body = null,
